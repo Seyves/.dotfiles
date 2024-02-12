@@ -6,5 +6,10 @@ require("oil").setup({
         is_hidden_file = function(name, bufnr)
             return vim.startswith(name, ".")
         end,
-    }
+    },
+    use_default_keymaps = false,
+    keymaps = {
+        ["<CR>"] = "actions.select",
+        ["-"] = "actions.parent",
+    },
 })

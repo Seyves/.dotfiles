@@ -14,6 +14,17 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
     {
+        'declancm/cinnamon.nvim',
+        config = function() require('cinnamon').setup({
+            extra_keymaps = true,
+            extended_keymaps = true,
+            always_scroll = true,
+            centered = true,
+            default_delay = 4,
+            scroll_limit = 70,
+        }) end
+    },
+    {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
@@ -27,8 +38,10 @@ return require('lazy').setup({
     'kvrohit/mellow.nvim',
     { 'rose-pine/neovim', as = 'rose-pine' },
     'nyoom-engineering/oxocarbon.nvim',  
+    'norcalli/nvim-colorizer.lua',
     'xiyaowong/transparent.nvim',
-    'loctvl842/monokai-pro.nvim',
+    'Wansmer/treesj',
+    'aktersnurra/no-clown-fiesta.nvim',
 
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     'nvim-treesitter/nvim-treesitter-context',

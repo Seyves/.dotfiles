@@ -2,6 +2,13 @@ vim.g.mapleader = " "
 --utilities
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "[q", ':cp<CR>')
+vim.keymap.set("n", "]q", ':cn<CR>')
+vim.keymap.set("c", "<C-H>", "<C-W>")
+
+vim.o.guifont = "IosevkaTerm Nerd Font Mono:h13"
+
+vim.g.neovide_background_color = "#0f1117"
 
 vim.keymap.set("n", "<leader>pv", ":Oil<CR>")
 --clipboard
