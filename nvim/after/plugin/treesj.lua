@@ -1,6 +1,7 @@
 local tsj = require('treesj')
 
 tsj.setup({
+    use_default_keymaps = false,
     ---@type boolean Use default keymaps (<space>m - toggle, <space>j - join, <space>s - split)
     ---@type boolean Node with syntax error will not be formatted
     check_syntax_error = true,
@@ -24,5 +25,5 @@ tsj.setup({
 })
 
 vim.keymap.set('n', '<leader>t', function()
-    require('treesj').toggle({ split = { recursive = true } })
+    require('treesj').toggle({ split = { recursive = false } })
 end)

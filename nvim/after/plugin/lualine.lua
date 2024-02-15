@@ -1,14 +1,7 @@
 colors = {
-    purple = '#be95ff',
-    alt_purple = '#ff7eb6',
-    pink = '#ee5396',
-    blue = '#78a9ff',
-    alt_blue = '#33b1ff',
-    cyan = '#08bdba',
-    alt_cyan = '#3ddbd9',
-    green = '#42be65',
-    black = '#161616',
-    white = '#fafafa'
+    bg = '#19191a',
+    fg = '#e1e1e1',
+    fo = '#984936'
 }
 
 require('lualine').setup({
@@ -17,6 +10,22 @@ require('lualine').setup({
         section_separators = { left = '', right = ''},
         refresh = {
             statusline = 200,
+        },
+        theme = {
+            normal = {
+                a = { fg = colors.fg, bg = colors.fo, gui = "bold" },
+                b = { fg = colors.fg, bg = colors.bg },
+                c = { fg = colors.fg, bg = colors.bg },
+            },
+            insert = { a = { fg = colors.fg, bg = colors.fo, gui = "bold" } },
+            visual = { a = { fg = colors.fg, bg = colors.fo, gui = "bold" } },
+            command = { a = { fg = colors.fg, bg = colors.fo, gui = "bold" } },
+            replace = { a = { fg = colors.fg, bg = colors.fo, gui = "bold" } },
+            inactive = {
+                a = { fg = colors.fg, bg = colors.fo },
+                b = { fg = colors.fg, bg = colors.bg },
+                c = { fg = colors.fg, bg = colors.bg },
+            },
         }
     },
     sections = {

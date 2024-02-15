@@ -39,19 +39,27 @@ return require('lazy').setup({
     { 'rose-pine/neovim', as = 'rose-pine' },
     'nyoom-engineering/oxocarbon.nvim',  
     'norcalli/nvim-colorizer.lua',
-    'xiyaowong/transparent.nvim',
+--    'xiyaowong/transparent.nvim',
     'Wansmer/treesj',
     'aktersnurra/no-clown-fiesta.nvim',
+    'mountain-theme/vim',
+    'ggandor/leap.nvim',
 
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-    'nvim-treesitter/nvim-treesitter-context',
+    --'nvim-treesitter/nvim-treesitter-context',
 
     'tpope/vim-fugitive',
     'ThePrimeagen/vim-be-good',
     'nvim-lua/plenary.nvim' , 
     'ThePrimeagen/harpoon' ,
     'mattn/emmet-vim',
-
+    {
+        'goolord/alpha-nvim',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'nvim-lua/plenary.nvim'
+        },
+    },
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
     'mbbill/undotree',
