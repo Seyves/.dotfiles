@@ -1,10 +1,14 @@
 function Color(color)
-	color = color or "no-clown-fiesta"
+    vim.cmd("let g:gruvbox_material_enable_italic = 1")
+    vim.cmd("let g:gruvbox_material_transparent_background = 1")
+    vim.cmd("let g:gruvbox_material_background = 'medium'")
+	color = color or "gruvbox-material"
 	vim.cmd.colorscheme(color)
     --vim.o.background = "dark"
-    vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-    vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+   -- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+    --vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
+
 
 require 'colorizer'.setup {
   '*'; -- Highlight all files, but customize some others.
