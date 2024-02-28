@@ -7,8 +7,9 @@ vim.keymap.set("n", "]q", ':cn<CR>')
 vim.keymap.set("c", "<C-H>", "<C-W>")
 
 vim.o.guifont = "IosevkaTerm Nerd Font Mono:h13"
-
-vim.g.neovide_background_color = "#0f1117"
+vim.g.neovide_background_color = "#ffffff"
+vim.g.neovide_scroll_animation_length = 0.2
+vim.g.neovide_cursor_trail_size = 0.3
 
 vim.keymap.set("n", "<leader>pv", ":Oil<CR>")
 --clipboard

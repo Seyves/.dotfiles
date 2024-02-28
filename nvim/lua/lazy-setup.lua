@@ -14,18 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
     {
-        'declancm/cinnamon.nvim',
-        config = function() require('cinnamon').setup({
-            extra_keymaps = true,
-            extended_keymaps = true,
-            always_scroll = true,
-            centered = true,
-            default_delay = 4,
-            scroll_limit = 70,
-        }) end
-    },
-    {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
@@ -33,25 +23,25 @@ return require('lazy').setup({
         opts = {},
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
-    },    
-    { "catppuccin/nvim", as = "catppuccin" },
+    },
+    { "catppuccin/nvim",  as = "catppuccin" },
     'kvrohit/mellow.nvim',
     { 'rose-pine/neovim', as = 'rose-pine' },
-    'nyoom-engineering/oxocarbon.nvim',  
+    'nyoom-engineering/oxocarbon.nvim',
     'norcalli/nvim-colorizer.lua',
---    'xiyaowong/transparent.nvim',
+    --    'xiyaowong/transparent.nvim',
     'Wansmer/treesj',
     'aktersnurra/no-clown-fiesta.nvim',
     'mountain-theme/vim',
     'ggandor/leap.nvim',
 
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     --'nvim-treesitter/nvim-treesitter-context',
 
     'tpope/vim-fugitive',
     'ThePrimeagen/vim-be-good',
-    'nvim-lua/plenary.nvim' , 
-    'ThePrimeagen/harpoon' ,
+    'nvim-lua/plenary.nvim',
+    'ThePrimeagen/harpoon',
     'mattn/emmet-vim',
     {
         'goolord/alpha-nvim',
@@ -61,7 +51,7 @@ return require('lazy').setup({
         },
     },
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+    'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
     'mbbill/undotree',
     {
         'nvim-lualine/lualine.nvim',
@@ -72,21 +62,21 @@ return require('lazy').setup({
         branch = 'v1.x',
         dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
         }
     }
 })

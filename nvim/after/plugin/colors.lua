@@ -1,15 +1,20 @@
 function Color(color)
-	color = color or "no-clown-fiesta"
-	vim.cmd.colorscheme(color)
+    color = color or "no-clown-fiesta"
+    vim.api.nvim_command([[
+        augroup ChangeBackgroudColour
+            autocmd colorscheme * :hi normal guibg=#1b1b1c
+        augroup END
+    ]])
+    vim.cmd.colorscheme(color)
     --vim.o.background = "dark"
-    vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-    vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+    --    vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+    --   vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
 
 require 'colorizer'.setup {
-  '*'; -- Highlight all files, but customize some others.
-  css = { rgb_fn = true; }; -- Enable parsing rgb(...) functions in css.
-  html = { names = false; } -- Disable parsing "names" like Blue or Gray
+    '*',                    -- Highlight all files, but customize some others.
+    css = { rgb_fn = true, }, -- Enable parsing rgb(...) functions in css.
+    html = { names = false, } -- Disable parsing "names" like Blue or Gray
 }
 
 require("no-clown-fiesta").setup({
@@ -26,4 +31,3 @@ require("no-clown-fiesta").setup({
 })
 
 Color()
-
