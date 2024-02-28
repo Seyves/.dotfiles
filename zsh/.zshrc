@@ -6,19 +6,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # PATH
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export NVM_DIR="$HOME/.nvm"
+export PATH="$PATH:/opt/nvim-linux64/bin"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$PATH:/usr/bin/Postman"
 export PATH="$PATH:/usr/local/go/bin"
-. "$HOME/.cargo/env"
 
 # Aliases
 alias v="nvim"
 alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto'
 alias grep='grep --color=auto'
+alias fd='fdfind'
 alias ec="$EDITOR $HOME/.zshrc" # edit .zshrc
 alias sc="source $HOME/.zshrc"  # reload zsh configuration
 

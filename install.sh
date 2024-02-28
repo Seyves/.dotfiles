@@ -1,13 +1,17 @@
 #!/bin/bash
 
 #dependencies
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install git
-brew install tmux
-brew install zsh
-brew install zplug 
-brew install --cask kitty
-brew install neovim
+apt-get install tmux
+apt-get install zsh
+apt-get install zplug 
+apt-get install kitty
+apt-get install curl
+apt-get install fzf
+apt-get install fd-find
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+rm -rf /opt/nvim
+tar -C /opt -xzf nvim-linux64.tar.gz
 
 #symlinks
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
