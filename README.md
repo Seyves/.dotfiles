@@ -1,4 +1,4 @@
-My dotfiles.
+# My dotfiles.
 
 To install just run:
 ```bash
