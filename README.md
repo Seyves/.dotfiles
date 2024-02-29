@@ -4,7 +4,7 @@
 
 To install just run:
 ```bash
-sudo bash debian-install.sh && bash create-sym.sh
+bash debian-install.sh
 ```
 
 For now install script is only written for debian, but there is no complex dependencies, so it probably will work if you just replace apt-get in debian-install.sh with your packet manager.
