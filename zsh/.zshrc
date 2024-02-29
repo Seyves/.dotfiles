@@ -66,7 +66,8 @@ zplug load
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 function sf() {
-    cd `fd --type d -p 'seyves/personal|seyves/work|seyves/.dotfiles' ~/ | fzf` && tmux new-session -A -s `basename "$PWD"`
+    cd
+    cd `fd --type d -p "personal|work|.dotfiles" ~/ | fzf` && tmux new-session -A -s `basename "$PWD"`
 }
 
 function itl-app-sync() {
