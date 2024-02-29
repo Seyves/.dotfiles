@@ -1,5 +1,7 @@
 # My dotfiles.
 
+![](https://github.com/Seyves/.dotfiles/blob/main/showcase.gif)
+
 To install just run:
 ```bash
 sudo bash debian-install.sh && bash create-sym.sh
