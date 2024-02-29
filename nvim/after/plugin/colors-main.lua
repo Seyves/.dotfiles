@@ -13,6 +13,9 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 require("rose-pine").setup({
     variant = "dawn",
+    styles = {
+        italic = false,
+    },
 })
 
 require 'colorizer'.setup {
