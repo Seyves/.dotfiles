@@ -26,4 +26,4 @@ tsj.setup({
 
 vim.keymap.set('n', '<leader>t', function()
     require('treesj').toggle({ split = { recursive = false } })
-end)
+end, {desc = "Tree"})

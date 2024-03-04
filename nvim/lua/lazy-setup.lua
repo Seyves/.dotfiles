@@ -18,15 +18,26 @@ return require('lazy').setup({
         tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
+    { 'numToStr/Comment.nvim', opts = {} },
     {
         'stevearc/oil.nvim',
         opts = {},
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-    { "catppuccin/nvim",  as = "catppuccin" },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {
+        }
+    },
+    { "catppuccin/nvim",       as = "catppuccin" },
     'kvrohit/mellow.nvim',
-    { 'rose-pine/neovim', as = 'rose-pine' },
+    { 'rose-pine/neovim',                as = 'rose-pine' },
     'Yazeed1s/oh-lucy.nvim',
     'nyoom-engineering/oxocarbon.nvim',
     'norcalli/nvim-colorizer.lua',

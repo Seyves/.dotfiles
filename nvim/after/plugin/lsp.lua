@@ -38,20 +38,34 @@ lsp.set_preferences({
 
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
+local function spread(template)
+    local result = {}
+    for key, value in pairs(template) do
+        result[key] = value
+    end
+
+    return function(table)
+        for key, value in pairs(table) do
+            result[key] = value
+        end
+        return result
+    end
+end
+
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     --  lsp_format_on_save(bufnr)
-    vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, opts)
-    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, spread(opts) { desc = "Format" })
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, spread(opts) { desc = "Go to definition" })
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, spread(opts) { desc = "Hover documentation"})
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "<leader>ac", function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
-    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, spread(opts) { desc = "Next diagnostic" })
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, spread(opts) { desc = "Previous diagnostic" })
+    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, spread(opts) { desc = "Code actions" })
+    vim.keymap.set("n", "<leader>qr", function() vim.lsp.buf.references() end, spread(opts) { desc = "Quicklist references" })
+    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, spread(opts) { desc = "Rename"})
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 

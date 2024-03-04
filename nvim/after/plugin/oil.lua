@@ -3,7 +3,7 @@ require("oil").setup({
         -- Show files and directories that start with "."
         show_hidden = true,
         -- This function defines what is considered a "hidden" file
-        is_hidden_file = function(name, bufnr)
+        is_hidden_file = function(name)
             return vim.startswith(name, ".")
         end,
     },
@@ -13,3 +13,5 @@ require("oil").setup({
         ["-"] = "actions.parent",
     },
 })
+
+vim.keymap.set("n", "<leader>of", ":Oil<CR>", { desc = "Open filetree" })

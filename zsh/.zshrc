@@ -12,6 +12,7 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$PATH:/usr/bin/Postman"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/home/seyves/.local/bin"
 
 # Aliases
 alias v="nvim"
@@ -66,8 +67,30 @@ zplug load
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 function sf() {
-    cd
-    cd `fd --type d -p "personal|work|.dotfiles" ~/ | fzf` && tmux new-session -A -s `basename "$PWD"`
+    selected=$(find ~/work ~/ ~/personal -mindepth 1 -maxdepth 1 -type d | fzf)  
+    if [ $? -eq 0 ]; then
+        selected_name=$(basename "$selected" | tr . _)
+        tmux_running=$(pgrep tmux)
+
+        if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+            tmux new-session -s $selected_name -c $selected
+            exit 0
+        fi
+
+        if ! tmux has-session -t=$selected_name 2> /dev/null; then
+            tmux new-session -ds $selected_name -c $selected
+        fi
+
+        if [ "$TMUX" ]; then 
+            tmux switch -t $selected_name
+        else 
+            tmux attach -t $selected_name
+        fi
+    fi
+}
+
+function s() {
+    tmux new-session -A -s `basename "$PWD"`
 }
 
 function itl-app-sync() {
@@ -83,4 +106,3 @@ function itl-vpn() {
 function itl-dev() {
     ssh -A root@docker-dev.itoolabs
 }
-
