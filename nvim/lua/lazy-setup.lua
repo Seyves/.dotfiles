@@ -36,7 +36,7 @@ return require('lazy').setup({
         }
     },
     { "catppuccin/nvim",       as = "catppuccin" },
-    'kvrohit/mellow.nvim',
+    'mellow-theme/mellow.nvim',
     { 'rose-pine/neovim',                as = 'rose-pine' },
     'Yazeed1s/oh-lucy.nvim',
     'nyoom-engineering/oxocarbon.nvim',

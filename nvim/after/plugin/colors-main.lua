@@ -1,5 +1,5 @@
 function ToggleTheme()
-    if vim.g.colors_name == 'mellow' then
+    if vim.g.colors_name == 'no-clown-fiesta' then
         vim.cmd('!bash ~/.dotfiles/toggletheme.sh Koga-Rosewood light.jpg')
     else
         vim.cmd('!bash ~/.dotfiles/toggletheme.sh BreezeGrayDark dark.webp')
