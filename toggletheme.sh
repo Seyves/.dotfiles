@@ -1,8 +1,8 @@
 plasma-apply-colorscheme $1
 
-mv ~/.dotfiles/kitty/current-theme.conf ~/.dotfiles/kitty/current-theme.conf.temp
-mv ~/.dotfiles/kitty/current-theme.conf.bak ~/.dotfiles/kitty/current-theme.conf
-mv ~/.dotfiles/kitty/current-theme.conf.temp ~/.dotfiles/kitty/current-theme.conf.bak
+mv ~/.dotfiles/alacritty/theme.toml ~/.dotfiles/alacritty/theme.toml.temp
+mv ~/.dotfiles/alacritty/theme.toml.bak ~/.dotfiles/alacritty/theme.toml
+mv ~/.dotfiles/alacritty/theme.toml.temp ~/.dotfiles/alacritty/theme.toml.bak
 
 mv ~/.dotfiles/nvim/after/plugin/colors.lua ~/.dotfiles/nvim/after/plugin/colors.lua.temp
 mv ~/.dotfiles/nvim/after/plugin/colors.lua.bak ~/.dotfiles/nvim/after/plugin/colors.lua

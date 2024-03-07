@@ -35,16 +35,9 @@ return require('lazy').setup({
         opts = {
         }
     },
-    { "catppuccin/nvim",       as = "catppuccin" },
-    'mellow-theme/mellow.nvim',
-    { 'rose-pine/neovim',                as = 'rose-pine' },
-    'Yazeed1s/oh-lucy.nvim',
-    'nyoom-engineering/oxocarbon.nvim',
-    'norcalli/nvim-colorizer.lua',
-    'xiyaowong/transparent.nvim',
+    { 'rose-pine/neovim',      as = 'rose-pine' },
+    'rebelot/kanagawa.nvim',
     'Wansmer/treesj',
-    'aktersnurra/no-clown-fiesta.nvim',
-    'mountain-theme/vim',
     'ggandor/leap.nvim',
 
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },

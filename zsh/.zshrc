@@ -15,9 +15,10 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/home/seyves/.local/bin"
 
 # Aliases
-alias v="nvim"
 alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto'
+#TERM variable for blinking cursor to work
+alias v="nvim"
 alias grep='grep --color=auto'
 alias fd='fdfind'
 alias ec="$EDITOR $HOME/.zshrc" # edit .zshrc
@@ -53,6 +54,8 @@ zplug "jeffreytse/zsh-vi-mode"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "themes/robbyrussell", from:oh-my-zsh, as:theme   # Theme
 zplug "romkatv/powerlevel10k", as:theme, depth:1
+
+ZVM_CURSOR_STYLE_ENABLED=false
 
 # zplug - install/load new plugins when zsh is started or reloaded
 if ! zplug check ; then

@@ -1,1 +1,9 @@
 vim.cmd.colorscheme("rose-pine")
+
+local custom_lualine_theme = require("lualine.themes.rose-pine")
+
+local lualine_settings = require("lualine-setting")
+
+lualine_settings.options.theme = custom_lualine_theme
+
+require('lualine').setup(lualine_settings)
