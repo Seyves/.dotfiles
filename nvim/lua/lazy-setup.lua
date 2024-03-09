@@ -37,6 +37,7 @@ return require('lazy').setup({
     },
     { 'rose-pine/neovim',      as = 'rose-pine' },
     'rebelot/kanagawa.nvim',
+    'aktersnurra/no-clown-fiesta.nvim',
     'Wansmer/treesj',
     'ggandor/leap.nvim',
 
@@ -48,6 +49,7 @@ return require('lazy').setup({
     'nvim-lua/plenary.nvim',
     'ThePrimeagen/harpoon',
     'mattn/emmet-vim',
+    'mellow-theme/mellow.nvim',
     {
         'goolord/alpha-nvim',
         dependencies = {
