@@ -7,7 +7,8 @@ lsp.ensure_installed({
     'rust_analyzer',
     'gopls',
     'cssls',
-    'lua_ls'
+    'lua_ls',
+    'vuels'
 })
 
 -- Fix Undefined global 'vim'
@@ -36,8 +37,6 @@ lsp.set_preferences({
     }
 })
 
-local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
-
 local function spread(template)
     local result = {}
     for key, value in pairs(template) do
@@ -52,10 +51,9 @@ local function spread(template)
     end
 end
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    --  lsp_format_on_save(bufnr)
     vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, spread(opts) { desc = "Format" })
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, spread(opts) { desc = "Go to definition" })
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, spread(opts) { desc = "Hover documentation"})

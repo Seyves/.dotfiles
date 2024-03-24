@@ -1,4 +1,5 @@
 local builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
 
 vim.keymap.set('n', '<leader>sf', function() builtin.find_files({ no_ignore = true }) end, { desc = 'Search files' })
 vim.keymap.set('n', '<leader>sw', builtin.live_grep, { desc = 'Search word' })
@@ -7,8 +8,23 @@ vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnost
 vim.keymap.set('n', '<leader>sa', builtin.current_buffer_fuzzy_find, { desc = 'Search appearence in current file' })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search buffers' })
 
+local function open_search_and_replace_quickfix(bufnr)
+    local current_picker = require('telescope.actions.state').get_current_picker(bufnr)
+    local prompt = current_picker:_get_prompt()
+    actions.send_to_qflist(bufnr)
+    actions.open_qflist(bufnr)
+    vim.api.nvim_feedkeys(":cdo s/" .. prompt .. "/", "n", true)
+end
+
 require("telescope").setup {
     pickers = {
+        live_grep = {
+            mappings = {
+                i = {
+                    ["<C-r>"] = open_search_and_replace_quickfix
+                }
+            }
+        },
         find_files = {
             hidden = true
         }
