@@ -35,9 +35,10 @@ return require('lazy').setup({
     },
     { 'rose-pine/neovim',      as = 'rose-pine' },
     'rebelot/kanagawa.nvim',
-    'notken12/base46-colors',
     'Wansmer/treesj',
+    'neanias/everforest-nvim',
     'ggandor/leap.nvim',
+    'norcalli/nvim-colorizer.lua',
 
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     --'nvim-treesitter/nvim-treesitter-context',
