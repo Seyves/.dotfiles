@@ -24,7 +24,7 @@ require('kanagawa').setup({
     functionStyle = { bold = false },
     booleans = { bold = false },
     typeStyle = { bold = false },
-    keywordStyle = { bold = false },
+    keywordStyle = { bold = false, italic = false },
     statementStyle = { bold = false },
     transparent = true,
     overrides = function()

@@ -7,11 +7,14 @@ fi
 
 # PATH
 export NVM_DIR="$HOME/.nvm"
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$PATH:/usr/bin/Postman"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/home/seyves/go/bin"
 export PATH="$PATH:/home/seyves/.local/bin"
 
 # Aliases
@@ -97,11 +100,11 @@ function s() {
 }
 
 function itl-app-sync() {
-    sshpass -p "root" rsync -avz -e 'ssh' --exclude='media/vue/node_modules' --exclude='media/vue/.dev' --exclude='.git' /home/seyves/work/webapp root@core-dev.$1.kube.itoolabs:/root
+    sshpass -p "root" rsync -avz -e 'ssh' --exclude='media/vue/node_modules' --exclude='media/vue/.dev' --exclude='.git' --exclude='media/vue/dist' --exclude='media/vue/.temp_cache' /home/seyves/work/webapp root@core-dev.$1.kube.itoolabs:/root
     sshpass -p "root" ssh root@centrex-1.$1.kube.itoolabs 'exec /usr/local/bin/centrex-configure -log -install-app '\''file "/root/webapp"'\'''
 }
 function itl-app-clear() {
-    rsync -avh --exclude 'media/vue/node_modules' --exclude='media/vue/.dev' --exclude='.git' --delete-excluded /home/seyves/work/webapp root@core-dev.$1.kube.itoolabs:/root --delete
+    rsync -avh --exclude='media/vue/node_modules' --exclude='media/vue/.dev' --exclude='.git' --exclude='media/vue/dist' --exclude='media/vue/.temp_cache' --delete-excluded /home/seyves/work/webapp root@core-dev.$1.kube.itoolabs:/root --delete
 }
 function itl-vpn() {
     sudo openvpn --config /etc/openvpn/client/client.ovpn 
@@ -109,3 +112,11 @@ function itl-vpn() {
 function itl-dev() {
     ssh -A root@docker-dev.itoolabs
 }
+
+# pnpm
+export PNPM_HOME="/home/seyves/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

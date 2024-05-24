@@ -2,12 +2,14 @@ local lualine_settings = require("lualine-setting")
 
 vim.cmd.colorscheme("kanagawa-dragon")
 
-local custom_lualine_theme = require'lualine.themes.kanagawa'
+-- if (vim.g.colors_name == "kanagawa-dragon") then
+    local custom_lualine_theme = require 'lualine.themes.kanagawa'
 
-custom_lualine_theme.normal.b.bg = "#1b1b1b"
-custom_lualine_theme.normal.c.bg = "#1b1b1b"
+    custom_lualine_theme.normal.b.bg = "#1b1b1b"
+    custom_lualine_theme.normal.c.bg = "#1b1b1b"
 
-lualine_settings.options.theme = custom_lualine_theme
+    lualine_settings.options.theme = custom_lualine_theme
+-- end
 
 require('lualine').setup(lualine_settings)
 

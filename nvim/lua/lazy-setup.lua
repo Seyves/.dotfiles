@@ -31,13 +31,11 @@ return require('lazy').setup({
         init = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
-        end,
-        opts = {
-        }
+        end
     },
     { 'rose-pine/neovim',      as = 'rose-pine' },
     'rebelot/kanagawa.nvim',
-    'aktersnurra/no-clown-fiesta.nvim',
+    'notken12/base46-colors',
     'Wansmer/treesj',
     'ggandor/leap.nvim',
 
@@ -63,6 +61,11 @@ return require('lazy').setup({
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+    },
+    {
+        "mfussenegger/nvim-lint",
+        lazy = true,
+        event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
     },
     {
         'VonHeikemen/lsp-zero.nvim',
