@@ -8,5 +8,5 @@ wk.register({
         g = { name = "[G]it", },
         h = { name = "[H]arpoon", },
     },
-    g = { name = "[G]o to", },
+    g = { name = "[G]it", },
 })

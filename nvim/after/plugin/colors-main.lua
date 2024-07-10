@@ -1,17 +1,6 @@
-function ToggleTheme()
-    if vim.g.colors_name == 'kanagawa' then
-        vim.cmd('!bash ~/.dotfiles/toggletheme.sh Koga-Rosewood light.jpg')
-    else
-        vim.cmd('!bash ~/.dotfiles/toggletheme.sh BreezeGrayDark dark.webp')
-    end
-    vim.cmd('so ~/.config/nvim/after/plugin/colors.lua')
-    vim.cmd('hi! LineNr guibg=none ctermbg=none')
-    return nil
-end
-
 require('colorizer').setup()
-
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 require('everforest').setup({
@@ -31,6 +20,12 @@ require('everforest').setup({
         hl.TelescopeTitle = { fg = palette.purple }
         hl.TelescopePromptNormal = { fg = palette.fg, bg = palette.bg1 }
         hl.TelescopePromptBorder = { fg = palette.bg1, bg = palette.bg1 }
+        hl.InfoFloat = { bg = palette.bg0, fg = hl.InfoFloat.fg }
+        hl.HintFloat = { bg = palette.bg0, fg = hl.HintFloat.fg }
+        hl.ErrorFloat = { bg = palette.bg0, fg = hl.ErrorFloat.fg }
+        hl.WarningFloat = { bg = palette.bg0, fg = hl.WarningFloat.fg }
+        hl.FloatBorder = { bg = palette.bg0, fg = palette.bg5 }
+        hl.NormalFloat = { bg = palette.bg0, fg = palette.fg }
     end,
 })
 
