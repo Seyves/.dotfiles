@@ -105,7 +105,9 @@ return require('lazy').setup({
                     json = { { "prettierd", "prettier" } },
                     markdown = { { "prettierd", "prettier" } },
                     html = { "prettierd", "prettier" },
+                    go = { "crlfmt" },
                     css = { { "prettierd", "prettier" } },
+                    sql = { "sql_formatter" },
                     scss = { { "prettierd", "prettier" } },
                 },
             })
@@ -118,5 +120,5 @@ return require('lazy').setup({
                 })
             end, { desc = "Format" })
         end,
-    }
+    },
 })
