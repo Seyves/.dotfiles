@@ -11,5 +11,5 @@ vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
-require("remap")
-require("lazy-setup")
+require("config.remap")
+require("config.lazy")
