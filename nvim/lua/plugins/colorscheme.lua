@@ -17,17 +17,22 @@ return {
                 palette.bg5 = "#5a524c"
             end,
             on_highlights = function(hl, palette)
+                -- I like telescope that way :)
                 hl.TelescopeBorder = { fg = palette.bg1, bg = palette.bg1 }
                 hl.TelescopeNormal = { fg = palette.fg, bg = palette.bg1 }
                 hl.TelescopeTitle = { fg = palette.purple }
                 hl.TelescopePromptNormal = { fg = palette.fg, bg = palette.bg1 }
                 hl.TelescopePromptBorder = { fg = palette.bg1, bg = palette.bg1 }
+                -- More tweaks
                 hl.InfoFloat = { bg = palette.bg0, fg = hl.InfoFloat.fg }
                 hl.HintFloat = { bg = palette.bg0, fg = hl.HintFloat.fg }
                 hl.ErrorFloat = { bg = palette.bg0, fg = hl.ErrorFloat.fg }
                 hl.WarningFloat = { bg = palette.bg0, fg = hl.WarningFloat.fg }
                 hl.FloatBorder = { bg = palette.bg0, fg = palette.bg5 }
                 hl.NormalFloat = { bg = palette.bg0, fg = palette.fg }
+                -- Leap highlights 
+                hl.LeapMatch = { bg = palette.fb, fg = palette.bg0, bold = true }
+                hl.LeapLabel = { bg = palette.red, fg = palette.bg0, bold = true }
             end,
         })
 

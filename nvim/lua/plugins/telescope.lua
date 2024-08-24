@@ -30,7 +30,9 @@ return {
                 live_grep = {
                     mappings = {
                         i = {
-                            ["<C-r>"] = open_search_and_replace_quickfix
+                            ["<C-r>"] = open_search_and_replace_quickfix,
+                            ["<C-Down>"] = actions.cycle_history_next,
+                            ["<C-Up>"] = actions.cycle_history_prev,
                         }
                     }
                 },

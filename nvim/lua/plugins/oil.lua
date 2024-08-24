@@ -19,6 +19,6 @@ return {
                 ["-"] = "actions.parent",
             },
         })
-        vim.keymap.set("n", "<leader>of", ":Oil<CR>", { desc = "Open filetree" })
+        vim.keymap.set("n", "<leader>o", ":Oil<CR>", { desc = "Open filetree" })
     end
 }

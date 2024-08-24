@@ -38,20 +38,17 @@ return {
 
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
                     spread(opts) { desc = "Go to definition" })
-                vim.keymap.set('n', 'gv', ':split | lua vim.lsp.buf.definition()<CR>')
                 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end,
                     spread(opts) { desc = "Hover documentation" })
-                vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-                vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
                 vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end,
                     spread(opts) { desc = "Next diagnostic" })
                 vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end,
                     spread(opts) { desc = "Previous diagnostic" })
-                vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end,
+                vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end,
                     spread(opts) { desc = "Code actions" })
                 vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
                     spread(opts) { desc = "Quicklist references" })
-                vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, spread(opts) { desc = "Rename" })
+                vim.keymap.set("n", "cn", function() vim.lsp.buf.rename() end, spread(opts) { desc = "Rename" })
                 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
             end,
         })
@@ -102,6 +99,7 @@ return {
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
             border = "rounded",
+            silent = true,
         })
 
         vim.diagnostic.config({
